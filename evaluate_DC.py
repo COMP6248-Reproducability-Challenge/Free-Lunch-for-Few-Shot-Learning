@@ -1,6 +1,5 @@
 import time
 import pickle
-from typing import OrderedDict
 import numpy as np
 import torch
 from tqdm import tqdm
@@ -97,7 +96,7 @@ def evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, 
         for i in range(len(support_data)):
             # Calibrate distribution, then sample from the distribution
             cali_mean, cali_cov = distribution_calibration(support_data[i], base_means, base_cov, k=k, alpha=alpha)
-            distribution = MultivariateNormal(cali_mean, cali_cov)
+            distribution = MultivariateNormal(cali_mean, cali_cov + torch.eye(cali_cov.shape[0]) * 0.1)
             sampled_data[i*feature_per_data:(i+1)*feature_per_data] = distribution.sample((feature_per_data,))
             sampled_label[i*feature_per_data:(i+1)*feature_per_data] = torch.full((feature_per_data,), support_label[i])
         
