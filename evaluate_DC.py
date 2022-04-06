@@ -28,7 +28,7 @@ def distribution_calibration(support, base_means, base_cov, k=2, alpha=0.21):
     # print("Calibrated Cov:", cali_cov.shape)
     return cali_mean, cali_cov
 
-def evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=100, lamb=0.5, k=2, alpha=0.21, num_features=500):
+def evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=10000, lamb=0.5, k=2, alpha=0.21, num_features=500):
     """
     lamb: Tukey's Transformation parameter
     k: Top-k closest classes used for distribution calibration
@@ -96,7 +96,7 @@ def evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, 
         for i in range(len(support_data)):
             # Calibrate distribution, then sample from the distribution
             cali_mean, cali_cov = distribution_calibration(support_data[i], base_means, base_cov, k=k, alpha=alpha)
-            distribution = MultivariateNormal(cali_mean, cali_cov + torch.eye(cali_cov.shape[0]) * 0.1)
+            distribution = MultivariateNormal(cali_mean, cali_cov + torch.eye(cali_cov.shape[0]) * 0.01)
             sampled_data[i*feature_per_data:(i+1)*feature_per_data] = distribution.sample((feature_per_data,))
             sampled_label[i*feature_per_data:(i+1)*feature_per_data] = torch.full((feature_per_data,), support_label[i])
         
@@ -132,6 +132,8 @@ def evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, 
         acc_list.append(acc)
         # print(time.time() - st)
     print('%s %d way %d shot  ACC : %f'%(dataset,n_ways,n_shot,float(np.mean(acc_list))))
+    
+    return acc_list, support_data, support_label, sampled_data, sampled_label, query_data, query_label
 
 if __name__ == "__main__":
     evaluate()
