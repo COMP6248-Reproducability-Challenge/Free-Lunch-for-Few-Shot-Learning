@@ -33,5 +33,25 @@ def tsne(support_data, support_label, sampled_data, sampled_label, query_data, q
     ax[1].plot()
     plt.show()
 
-acc_list, support_data, support_label, sampled_data, sampled_label, query_data, query_label = evaluate(dataset="miniImagenet", n_runs=3, n_shot=1, n_queries=300, alpha=0)
-tsne(support_data, support_label, sampled_data, sampled_label, query_data, query_label)
+if __name__ == "__main__":
+    # T-SNE (Figure 2)
+    # acc_list, support_data, support_label, sampled_data, sampled_label, query_data, query_label = evaluate(dataset="miniImagenet", n_runs=3, n_shot=1, n_queries=300, alpha=0)
+    # tsne(support_data, support_label, sampled_data, sampled_label, query_data, query_label)
+
+    # Performance Table (Table 2)
+    # evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=100, lamb=0.5, k=2, alpha=0.21, num_features=750)
+    # evaluate(dataset='miniImagenet', classifier='svm', n_ways=5, n_shot=1, n_queries=15, n_runs=100, lamb=0.5, k=2, alpha=0.21, num_features=750)
+    # evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=5, n_queries=15, n_runs=100, lamb=0.5, k=2, alpha=0.21, num_features=750)
+    # evaluate(dataset='miniImagenet', classifier='svm', n_ways=5, n_shot=5, n_queries=15, n_runs=100, lamb=0.5, k=2, alpha=0.21, num_features=750)
+    # evaluate(dataset='CUB', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=100, lamb=0.5, k=2, alpha=0.3, num_features=750)
+    # evaluate(dataset='CUB', classifier='svm', n_ways=5, n_shot=1, n_queries=15, n_runs=100, lamb=0.5, k=2, alpha=0.3, num_features=750)
+    # evaluate(dataset='CUB', classifier='logistic', n_ways=5, n_shot=5, n_queries=15, n_runs=100, lamb=0.5, k=2, alpha=0.3, num_features=750)
+    # evaluate(dataset='CUB', classifier='svm', n_ways=5, n_shot=5, n_queries=15, n_runs=100, lamb=0.5, k=2, alpha=0.3, num_features=750)
+
+    # # Ablation Study Table (Table 4) (Without Tukey, Without Generated Features, or Without Both)
+    # evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=100, lamb=1, k=2, alpha=0.21, num_features=750)
+    # evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=100, lamb=0.5, k=2, alpha=0.21, num_features=0)
+    # evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=100, lamb=1, k=2, alpha=0.21, num_features=0)
+    # evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=5, n_queries=15, n_runs=100, lamb=1, k=2, alpha=0.21, num_features=750)
+    # evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=5, n_queries=15, n_runs=100, lamb=0.5, k=2, alpha=0.21, num_features=0)
+    # evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=5, n_queries=15, n_runs=100, lamb=1, k=2, alpha=0.21, num_features=0)

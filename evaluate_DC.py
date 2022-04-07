@@ -131,8 +131,10 @@ def evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, 
         acc = np.mean(predicts == query_label)
         acc_list.append(acc)
         # print(time.time() - st)
-    print('%s %d way %d shot  ACC : %f'%(dataset,n_ways,n_shot,float(np.mean(acc_list))))
-    
+
+    print(f"{dataset} | {n_runs} runs | {n_ways} ways | {n_shot} shots | {n_queries} queries | classifier: {classifier} | lambda: {lamb} | k: {k} | alpha: {alpha} | num_features: {num_features}")
+    print(f"Accuracy: {np.mean(acc_list)} | 95% Confidence Level: {1.96 * 100 * np.std(acc_list) / np.sqrt(len(acc_list))}")
+
     return acc_list, support_data, support_label, sampled_data, sampled_label, query_data, query_label
 
 if __name__ == "__main__":
