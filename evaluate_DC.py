@@ -1,6 +1,8 @@
+from re import A
 import time
 import pickle
 import numpy as np
+from pyparsing import line
 import torch
 from tqdm import tqdm
 from torch.distributions import MultivariateNormal
@@ -9,8 +11,10 @@ from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.naive_bayes import GaussianNB
 
+import sys 
+
 use_gpu = torch.cuda.is_available()
-device = 'cuda' if use_gpu else 'cpu'
+device = 'cuda:0' if use_gpu else 'cpu'
 
 def tukey_transform(x, lamb):
     if lamb == 0:
@@ -96,7 +100,7 @@ def evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, 
         for i in range(len(support_data)):
             # Calibrate distribution, then sample from the distribution
             cali_mean, cali_cov = distribution_calibration(support_data[i], base_means, base_cov, k=k, alpha=alpha)
-            distribution = MultivariateNormal(cali_mean, cali_cov + torch.eye(cali_cov.shape[0]) * 0.01)
+            distribution = MultivariateNormal(cali_mean, cali_cov + torch.eye(cali_cov.shape[0]).to(device) * 0.01)
             sampled_data[i*feature_per_data:(i+1)*feature_per_data] = distribution.sample((feature_per_data,))
             sampled_label[i*feature_per_data:(i+1)*feature_per_data] = torch.full((feature_per_data,), support_label[i])
         
@@ -132,8 +136,16 @@ def evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, 
         acc_list.append(acc)
         # print(time.time() - st)
 
-    print(f"{dataset} | {n_runs} runs | {n_ways} ways | {n_shot} shots | {n_queries} queries | classifier: {classifier} | lambda: {lamb} | k: {k} | alpha: {alpha} | num_features: {num_features}")
-    print(f"Accuracy: {np.mean(acc_list)} | 95% Confidence Level: {1.96 * 100 * np.std(acc_list) / np.sqrt(len(acc_list))}")
+    # print(f"{dataset} | {n_runs} runs | {n_ways} ways | {n_shot} shots | {n_queries} queries | classifier: {classifier} | lambda: {lamb} | k: {k} | alpha: {alpha} | num_features: {num_features}")
+    # print(f"Accuracy: {np.mean(acc_list)} | 95% Confidence Level: {1.96 * 100 * np.std(acc_list) / np.sqrt(len(acc_list))}")
+    line1 = f"{dataset} | {n_runs} runs | {n_ways} ways | {n_shot} shots | {n_queries} queries | classifier: {classifier} | lambda: {lamb} | k: {k} | alpha: {alpha} | num_features: {num_features} \n"
+    line2 = f"Accuracy: {np.mean(acc_list)} | 95% Confidence Level: {1.96 * 100 * np.std(acc_list) / np.sqrt(len(acc_list))} \n"
+
+    file = open(r"./output/outputs.txt","a")
+    file.write("\n")
+    file.write(line1)
+    file.write(line2)
+    file.close()
 
     return acc_list, support_data, support_label, sampled_data, sampled_label, query_data, query_label
 

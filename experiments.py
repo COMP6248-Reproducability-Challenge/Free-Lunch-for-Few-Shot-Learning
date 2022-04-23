@@ -6,10 +6,10 @@ import numpy as np
 from evaluate_DC import evaluate
 
 def tsne(support_data, support_label, sampled_data, sampled_label, query_data, query_label):
-    support_data = support_data.numpy() 
-    support_label = support_label.numpy().astype(np.uint8)
-    sampled_data = sampled_data.numpy() 
-    sampled_label = sampled_label.numpy().astype(np.uint8)
+    support_data = support_data.cpu().numpy() 
+    support_label = support_label.cpu().numpy().astype(np.uint8)
+    sampled_data = sampled_data.cpu().numpy() 
+    sampled_label = sampled_label.cpu().numpy().astype(np.uint8)
     query_data = query_data
     query_label = query_label.astype(np.uint8)
 
@@ -39,19 +39,20 @@ if __name__ == "__main__":
     # tsne(support_data, support_label, sampled_data, sampled_label, query_data, query_label)
 
     # Performance Table (Table 2)
-    # evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=100, lamb=0.5, k=2, alpha=0.21, num_features=750)
-    # evaluate(dataset='miniImagenet', classifier='svm', n_ways=5, n_shot=1, n_queries=15, n_runs=100, lamb=0.5, k=2, alpha=0.21, num_features=750)
-    # evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=5, n_queries=15, n_runs=100, lamb=0.5, k=2, alpha=0.21, num_features=750)
-    # evaluate(dataset='miniImagenet', classifier='svm', n_ways=5, n_shot=5, n_queries=15, n_runs=100, lamb=0.5, k=2, alpha=0.21, num_features=750)
-    # evaluate(dataset='CUB', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=100, lamb=0.5, k=2, alpha=0.3, num_features=750)
-    # evaluate(dataset='CUB', classifier='svm', n_ways=5, n_shot=1, n_queries=15, n_runs=100, lamb=0.5, k=2, alpha=0.3, num_features=750)
-    # evaluate(dataset='CUB', classifier='logistic', n_ways=5, n_shot=5, n_queries=15, n_runs=100, lamb=0.5, k=2, alpha=0.3, num_features=750)
-    # evaluate(dataset='CUB', classifier='svm', n_ways=5, n_shot=5, n_queries=15, n_runs=100, lamb=0.5, k=2, alpha=0.3, num_features=750)
+    # evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=10000, lamb=0.5, k=2, alpha=0.21, num_features=750)
+    evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=5, n_queries=15, n_runs=10000, lamb=0.5, k=2, alpha=0.21, num_features=750)
+    # evaluate(dataset='miniImagenet', classifier='svm', n_ways=5, n_shot=1, n_queries=15, n_runs=10000, lamb=0.5, k=2, alpha=0.21, num_features=750)
+    # evaluate(dataset='miniImagenet', classifier='svm', n_ways=5, n_shot=5, n_queries=15, n_runs=10000, lamb=0.5, k=2, alpha=0.21, num_features=750)
+   
+    # evaluate(dataset='CUB', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=10000, lamb=0.5, k=2, alpha=0.3, num_features=750)
+    # evaluate(dataset='CUB', classifier='logistic', n_ways=5, n_shot=5, n_queries=15, n_runs=10000, lamb=0.5, k=2, alpha=0.3, num_features=750)
+    # evaluate(dataset='CUB', classifier='svm', n_ways=5, n_shot=1, n_queries=15, n_runs=10000, lamb=0.5, k=2, alpha=0.3, num_features=750)
+    # evaluate(dataset='CUB', classifier='svm', n_ways=5, n_shot=5, n_queries=15, n_runs=10000, lamb=0.5, k=2, alpha=0.3, num_features=750)
 
-    # # Ablation Study Table (Table 4) (Without Tukey, Without Generated Features, or Without Both)
-    # evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=100, lamb=1, k=2, alpha=0.21, num_features=750)
-    # evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=100, lamb=0.5, k=2, alpha=0.21, num_features=0)
-    # evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=100, lamb=1, k=2, alpha=0.21, num_features=0)
-    # evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=5, n_queries=15, n_runs=100, lamb=1, k=2, alpha=0.21, num_features=750)
-    # evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=5, n_queries=15, n_runs=100, lamb=0.5, k=2, alpha=0.21, num_features=0)
-    # evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=5, n_queries=15, n_runs=100, lamb=1, k=2, alpha=0.21, num_features=0)
+    # # # Ablation Study Table (Table 4) (Without Tukey, Without Generated Features, or Without Both)
+    # evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=10000, lamb=1, k=2, alpha=0.21, num_features=750)
+    # evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=10000, lamb=0.5, k=2, alpha=0.21, num_features=0)
+    # evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=10000, lamb=1, k=2, alpha=0.21, num_features=0)
+    # evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=5, n_queries=15, n_runs=10000, lamb=1, k=2, alpha=0.21, num_features=750)
+    # evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=5, n_queries=15, n_runs=10000, lamb=0.5, k=2, alpha=0.21, num_features=0)
+    # evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=5, n_queries=15, n_runs=10000, lamb=1, k=2, alpha=0.21, num_features=0)
