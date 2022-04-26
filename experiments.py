@@ -56,3 +56,72 @@ if __name__ == "__main__":
     # evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=5, n_queries=15, n_runs=10000, lamb=1, k=2, alpha=0.21, num_features=750)
     # evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=5, n_queries=15, n_runs=10000, lamb=0.5, k=2, alpha=0.21, num_features=0)
     # evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=5, n_queries=15, n_runs=10000, lamb=1, k=2, alpha=0.21, num_features=0)
+
+
+###Plotting Graphs###
+
+#Figure 1: Accuracy when increasing the power in Tukey's Transformation
+#with and without generated features
+#5ways 1 shot
+def tukey_graph():
+    lambdas = [-2,-1,-0.5,0,0.5,1,2]
+
+    acc_with_genf = []
+    n_gen = 0
+    for l in lambdas:
+        acc = evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=1000, lamb=l, k=2, alpha=0.21, num_features=750)
+        acc_with_genf.append(acc)
+    print(acc_with_genf)
+
+    acc_wo_genf = []
+    n_gen = 0
+    for l in lambdas:
+        acc = evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15,n_runs=1000, lamb=l, k=2, alpha=0.21, num_features=0)
+        acc_wo_genf.append(acc) 
+    print(acc_wo_genf)
+
+
+    plt.figure(figsize=(10, 10))
+    plt.plot(lambdas, acc_with_genf, label='Training with generated features')
+    plt.plot(lambdas, acc_wo_genf, label='Training without generated features')
+
+    plt.xlabel('Values of power in Tukey Transformation', fontsize=13)
+    plt.ylabel('Test accuracy (5way-1shot)', fontsize=13)
+    plt.legend(prop={'size': 12})
+
+    plt.savefig('n generation variation.png')
+    
+
+#Figure 2: Accuracy when increasing the number of generated features
+#with or without Tukey's transformation
+#5ways, 1shot 
+#The original feature can berecovered by setting λ as 1
+def vary_n_generation(ndatas, labels): 
+    n_generations = [0, 10, 50, 100, 150, 300, 500, 650, 750]
+
+    accs_no_tukey = []
+    for n in n_generations:
+        acc = evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15,n_runs=1000, lamb=1, k=2, alpha=0.21, num_features=n)
+        accs_no_tukey.append(acc)
+    print(accs_no_tukey)
+    
+    accs_with_tukey = []
+    for n in n_generations:
+        acc = evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=0.5, n_queries=15,n_runs=1000, lamb=l, k=2, alpha=0.21, num_features=n)
+        accs_with_tukey.append(acc)
+    print(accs_with_tukey)
+
+    plt.figure(figsize=(10, 10))
+    plt.plot(n_generations, accs_no_tukey, label='training w/o Tukey transformation')
+    plt.plot(n_generations, accs_with_tukey, label='training w Tukey transformation')
+
+    plt.xlabel('Number of generated features per class', fontsize=13)
+    plt.ylabel('Test accuracy (5way-1shot)', fontsize=13)
+    plt.legend(prop={'size': 12})
+
+    plt.savefig('n generation variation.png')
+
+
+#Graphs to (maybe) do but low priority
+#Figure 3: The effect of different values of k.
+#Figure 4: The effect of different values of alpha.
