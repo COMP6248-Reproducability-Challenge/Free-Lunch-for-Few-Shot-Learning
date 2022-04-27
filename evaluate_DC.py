@@ -1,8 +1,8 @@
-from re import A
+#from re import A
 import time
 import pickle
 import numpy as np
-from pyparsing import line
+#from pyparsing import line
 import torch
 from tqdm import tqdm
 from torch.distributions import MultivariateNormal
@@ -32,7 +32,7 @@ def distribution_calibration(support, base_means, base_cov, k=2, alpha=0.21):
     # print("Calibrated Cov:", cali_cov.shape)
     return cali_mean, cali_cov
 
-def evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=10000, lamb=0.5, k=2, alpha=0.21, num_features=500):
+def evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=5, n_queries=15, n_runs=10000, lamb=0.5, k=2, alpha=0.21, num_features=500):
     """
     lamb: Tukey's Transformation parameter
     k: Top-k closest classes used for distribution calibration

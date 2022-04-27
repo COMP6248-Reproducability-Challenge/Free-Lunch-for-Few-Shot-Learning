@@ -107,7 +107,7 @@ def vary_n_generation(ndatas, labels):
     
     accs_with_tukey = []
     for n in n_generations:
-        acc = evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=0.5, n_queries=15,n_runs=1000, lamb=l, k=2, alpha=0.21, num_features=n)
+        acc = evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=0.5, n_queries=15,n_runs=1000, lamb=0.5, k=2, alpha=0.21, num_features=n)
         accs_with_tukey.append(acc)
     print(accs_with_tukey)
 
