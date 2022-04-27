@@ -1,0 +1,6 @@
+
+miniImagenet | 10000 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 0.5 | k: 2 | alpha: 0.21 | num_features: 500 
+Accuracy: 0.8020453333333333 | 95% Confidence Level: 0.2017514802497167 
+
+miniImagenet | 10000 runs | 5 ways | 5 shots | 15 queries | classifier: logistic | lambda: 0.5 | k: 2 | alpha: 0.21 | num_features: 500 
+Accuracy: 0.9079466666666667 | 95% Confidence Level: 0.1074584871447988 

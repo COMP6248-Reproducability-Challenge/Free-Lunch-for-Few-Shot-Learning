@@ -96,7 +96,7 @@ def tukey_graph():
 #with or without Tukey's transformation
 #5ways, 1shot 
 #The original feature can berecovered by setting λ as 1
-def vary_n_generation(ndatas, labels): 
+def vary_n_generation(): 
     n_generations = [0, 10, 50, 100, 150, 300, 500, 650, 750]
 
     accs_no_tukey = []
