@@ -7,3 +7,5 @@ filelists/miniImagenet/ILSVRC2015
 pretrained_checkpoints/
 illustration.png
 old_evalDC.py
+2101.06395v2.pdf
+output/*

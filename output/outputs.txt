@@ -1,6 +1,157 @@
 
+miniImagenet | 10000 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 0.5 | k: 2 | alpha: 0.21 | num_features: 750 
+Accuracy: 0.6809026666666667 | 95% Confidence Level: 0.20237245115683156 
+
+miniImagenet | 10000 runs | 5 ways | 5 shots | 15 queries | classifier: logistic | lambda: 0.5 | k: 2 | alpha: 0.21 | num_features: 750 
+Accuracy: 0.8338853333333333 | 95% Confidence Level: 0.13712079572650226 
+
+miniImagenet | 10000 runs | 5 ways | 1 shots | 15 queries | classifier: svm | lambda: 0.5 | k: 2 | alpha: 0.21 | num_features: 750 
+Accuracy: 0.679844 | 95% Confidence Level: 0.20420982493868667 
+
+miniImagenet | 10000 runs | 5 ways | 5 shots | 15 queries | classifier: svm | lambda: 0.5 | k: 2 | alpha: 0.21 | num_features: 750 
+Accuracy: 0.8312373333333333 | 95% Confidence Level: 0.13841168667129294 
+
+miniImagenet | 10 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 1 | k: 2 | alpha: 0.21 | num_features: 750 
+Accuracy: 0.644 | 95% Confidence Level: 4.959139997127638 
+
+/////
 miniImagenet | 10000 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 0.5 | k: 2 | alpha: 0.21 | num_features: 500 
 Accuracy: 0.8020453333333333 | 95% Confidence Level: 0.2017514802497167 
 
 miniImagenet | 10000 runs | 5 ways | 5 shots | 15 queries | classifier: logistic | lambda: 0.5 | k: 2 | alpha: 0.21 | num_features: 500 
 Accuracy: 0.9079466666666667 | 95% Confidence Level: 0.1074584871447988 
+/////
+miniImagenet | 10 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 1 | k: 2 | alpha: 0.21 | num_features: 0 
+Accuracy: 0.6093333333333334 | 95% Confidence Level: 5.6298988504827205 
+
+miniImagenet | 10 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 1 | k: 2 | alpha: 0.21 | num_features: 10 
+Accuracy: 0.5653333333333335 | 95% Confidence Level: 7.244167542083615 
+
+miniImagenet | 10 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 1 | k: 2 | alpha: 0.21 | num_features: 50 
+Accuracy: 0.5933333333333334 | 95% Confidence Level: 7.043890844002498 
+
+miniImagenet | 10 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 1 | k: 2 | alpha: 0.21 | num_features: 100 
+Accuracy: 0.6066666666666667 | 95% Confidence Level: 7.082567268378825 
+
+miniImagenet | 10 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 1 | k: 2 | alpha: 0.21 | num_features: 150 
+Accuracy: 0.616 | 95% Confidence Level: 6.588503063839479 
+
+miniImagenet | 10 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 1 | k: 2 | alpha: 0.21 | num_features: 300 
+Accuracy: 0.616 | 95% Confidence Level: 7.380527123601824 
+
+miniImagenet | 10 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 1 | k: 2 | alpha: 0.21 | num_features: 500 
+Accuracy: 0.6413333333333333 | 95% Confidence Level: 6.189242911877205 
+
+miniImagenet | 10 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 1 | k: 2 | alpha: 0.21 | num_features: 650 
+Accuracy: 0.6493333333333333 | 95% Confidence Level: 6.184827542731757 
+
+miniImagenet | 10 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 1 | k: 2 | alpha: 0.21 | num_features: 750 
+Accuracy: 0.6453333333333333 | 95% Confidence Level: 5.268314071461149 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 1 | k: 2 | alpha: 0.21 | num_features: 0 
+Accuracy: 0.624 | 95% Confidence Level: 7.552488119818526 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 1 | k: 2 | alpha: 0.21 | num_features: 10 
+Accuracy: 0.5839999999999999 | 95% Confidence Level: 8.277297594424564 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 1 | k: 2 | alpha: 0.21 | num_features: 50 
+Accuracy: 0.5946666666666667 | 95% Confidence Level: 13.026883437295691 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 1 | k: 2 | alpha: 0.21 | num_features: 100 
+Accuracy: 0.5946666666666667 | 95% Confidence Level: 10.097075906749769 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 1 | k: 2 | alpha: 0.21 | num_features: 150 
+Accuracy: 0.6373333333333333 | 95% Confidence Level: 8.537244437040428 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 1 | k: 2 | alpha: 0.21 | num_features: 300 
+Accuracy: 0.632 | 95% Confidence Level: 9.130973203577172 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 1 | k: 2 | alpha: 0.21 | num_features: 500 
+Accuracy: 0.6266666666666667 | 95% Confidence Level: 8.329935947466154 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 1 | k: 2 | alpha: 0.21 | num_features: 650 
+Accuracy: 0.6586666666666666 | 95% Confidence Level: 8.511607008471827 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 1 | k: 2 | alpha: 0.21 | num_features: 750 
+Accuracy: 0.6586666666666666 | 95% Confidence Level: 9.56922593409612 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 0.5 | k: 2 | alpha: 0.21 | num_features: 0 
+Accuracy: 0.6693333333333333 | 95% Confidence Level: 3.170652985672756 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 0.5 | k: 2 | alpha: 0.21 | num_features: 10 
+Accuracy: 0.6826666666666668 | 95% Confidence Level: 7.027874810748661 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 0.5 | k: 2 | alpha: 0.21 | num_features: 50 
+Accuracy: 0.6933333333333334 | 95% Confidence Level: 6.3154053621987645 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 0.5 | k: 2 | alpha: 0.21 | num_features: 100 
+Accuracy: 0.712 | 95% Confidence Level: 5.801364559787254 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 0.5 | k: 2 | alpha: 0.21 | num_features: 150 
+Accuracy: 0.7226666666666667 | 95% Confidence Level: 5.350636464737421 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 0.5 | k: 2 | alpha: 0.21 | num_features: 300 
+Accuracy: 0.7226666666666667 | 95% Confidence Level: 5.4517916647241345 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 0.5 | k: 2 | alpha: 0.21 | num_features: 500 
+Accuracy: 0.72 | 95% Confidence Level: 4.732947965533156 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 0.5 | k: 2 | alpha: 0.21 | num_features: 650 
+Accuracy: 0.7093333333333334 | 95% Confidence Level: 4.755979478509132 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 0.5 | k: 2 | alpha: 0.21 | num_features: 750 
+Accuracy: 0.7173333333333334 | 95% Confidence Level: 5.501671859030167 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 1 | k: 2 | alpha: 0.21 | num_features: 0 
+Accuracy: 0.624 | 95% Confidence Level: 7.552488119818526 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 1 | k: 2 | alpha: 0.21 | num_features: 10 
+Accuracy: 0.6026666666666667 | 95% Confidence Level: 8.569183360546477 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 1 | k: 2 | alpha: 0.21 | num_features: 50 
+Accuracy: 0.608 | 95% Confidence Level: 10.62441337883859 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 1 | k: 2 | alpha: 0.21 | num_features: 100 
+Accuracy: 0.6053333333333334 | 95% Confidence Level: 10.204723681816292 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 1 | k: 2 | alpha: 0.21 | num_features: 150 
+Accuracy: 0.616 | 95% Confidence Level: 11.292503330381031 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 1 | k: 2 | alpha: 0.21 | num_features: 300 
+Accuracy: 0.6293333333333333 | 95% Confidence Level: 10.43764155566019 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 1 | k: 2 | alpha: 0.21 | num_features: 500 
+Accuracy: 0.6266666666666667 | 95% Confidence Level: 9.022625584853026 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 1 | k: 2 | alpha: 0.21 | num_features: 650 
+Accuracy: 0.6373333333333334 | 95% Confidence Level: 9.332198330987662 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 1 | k: 2 | alpha: 0.21 | num_features: 750 
+Accuracy: 0.6613333333333332 | 95% Confidence Level: 8.57555687080696 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 0.5 | k: 2 | alpha: 0.21 | num_features: 0 
+Accuracy: 0.6693333333333333 | 95% Confidence Level: 3.170652985672756 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 0.5 | k: 2 | alpha: 0.21 | num_features: 10 
+Accuracy: 0.6853333333333333 | 95% Confidence Level: 5.257933146948311 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 0.5 | k: 2 | alpha: 0.21 | num_features: 50 
+Accuracy: 0.7093333333333334 | 95% Confidence Level: 5.6968269062698385 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 0.5 | k: 2 | alpha: 0.21 | num_features: 100 
+Accuracy: 0.6933333333333334 | 95% Confidence Level: 5.3301750648756565 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 0.5 | k: 2 | alpha: 0.21 | num_features: 150 
+Accuracy: 0.7173333333333334 | 95% Confidence Level: 4.639678762826388 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 0.5 | k: 2 | alpha: 0.21 | num_features: 300 
+Accuracy: 0.7066666666666667 | 95% Confidence Level: 5.226666666666668 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 0.5 | k: 2 | alpha: 0.21 | num_features: 500 
+Accuracy: 0.7066666666666667 | 95% Confidence Level: 5.481774246435992 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 0.5 | k: 2 | alpha: 0.21 | num_features: 650 
+Accuracy: 0.7066666666666668 | 95% Confidence Level: 5.121066555578697 
+
+miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 0.5 | k: 2 | alpha: 0.21 | num_features: 750 
+Accuracy: 0.7146666666666667 | 95% Confidence Level: 5.461804146372638 
