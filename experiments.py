@@ -64,7 +64,7 @@ def tukey_graph():
     plt.ylabel('Test accuracy (5way-1shot)', fontsize=13)
     plt.legend(prop={'size': 12})
 
-    plt.savefig('images/n generation variation.png')
+    plt.savefig('images/tukeygraph.png')
     
 
 #Figure 2: Accuracy when increasing the number of generated features
@@ -94,7 +94,7 @@ def vary_n_generation():
     plt.ylabel('Test accuracy (5way-1shot)', fontsize=13)
     plt.legend(prop={'size': 12})
 
-    plt.savefig('images/n_generation variation.png')
+    plt.savefig('images/ngraph.png')
 
 
 #Figure 3: The effect of different values of k.
@@ -103,7 +103,7 @@ def k_graph():
 
     accs_mini = []
     for kvalue in k_values:
-        acc = evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=1000, lamb=1, k=kvalue, alpha=0.21, num_features=750)
+        acc = evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=1000, lamb=0.5, k=kvalue, alpha=0.21, num_features=750)
         accs_mini.append(np.mean(acc[0]))
     print(accs_mini)
     
@@ -121,7 +121,7 @@ def k_graph():
     plt.ylabel('Test accuracy (5way-1shot)', fontsize=13)
     plt.legend(prop={'size': 12})
 
-    plt.savefig('images/n_generation variation.png')
+    plt.savefig('images/kgraph.png')
 
 #Figure 4: The effect of different values of alpha.
 def alpha_graph(): 
@@ -129,7 +129,7 @@ def alpha_graph():
 
     accs_mini = []
     for a1 in alpha_values:
-        acc = evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=1000, lamb=1, k=2, alpha=a1, num_features=750)
+        acc = evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=1000, lamb=0.5, k=2, alpha=a1, num_features=750)
         accs_mini.append(np.mean(acc[0]))
     print(accs_mini)
     
@@ -148,7 +148,7 @@ def alpha_graph():
     plt.ylabel('Test accuracy (5way-1shot)', fontsize=13)
     plt.legend(prop={'size': 12})
 
-    plt.savefig('images/n_generation variation.png')
+    plt.savefig('images/aphagraph.png')
 
 
 if __name__ == "__main__":
