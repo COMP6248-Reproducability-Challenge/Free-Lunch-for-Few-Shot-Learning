@@ -155,3 +155,30 @@ Accuracy: 0.7066666666666668 | 95% Confidence Level: 5.121066555578697
 
 miniImagenet | 5 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 0.5 | k: 2 | alpha: 0.21 | num_features: 750 
 Accuracy: 0.7146666666666667 | 95% Confidence Level: 5.461804146372638 
+
+miniImagenet | 20 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 0.5 | k: 2 | alpha: 0.21 | num_features: 750 
+Accuracy: 0.808 | 95% Confidence Level: 3.9950678926229357 
+
+miniImagenet | 20 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 1 | k: 2 | alpha: 0.21 | num_features: 750 
+Accuracy: 0.7993333333333333 | 95% Confidence Level: 3.488946813390348 
+
+miniImagenet | 20 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 2 | k: 2 | alpha: 0.21 | num_features: 750 
+Accuracy: 0.6166666666666666 | 95% Confidence Level: 4.221463674551228 
+
+miniImagenet | 20 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 0.5 | k: 2 | alpha: 0.21 | num_features: 0 
+Accuracy: 0.7746666666666667 | 95% Confidence Level: 3.1190765584989704 
+
+miniImagenet | 20 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 1 | k: 2 | alpha: 0.21 | num_features: 0 
+Accuracy: 0.7553333333333334 | 95% Confidence Level: 3.9601917349767017 
+
+miniImagenet | 20 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 2 | k: 2 | alpha: 0.21 | num_features: 0 
+Accuracy: 0.6140000000000001 | 95% Confidence Level: 5.175703202893733 
+
+miniImagenet | 20 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 0 | k: 2 | alpha: 0.21 | num_features: 750 
+Accuracy: 0.20000000000000004 | 95% Confidence Level: 1.2164417350911637e-15 
+
+miniImagenet | 20 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 0.5 | k: 2 | alpha: 0.21 | num_features: 750 
+Accuracy: 0.8133333333333332 | 95% Confidence Level: 4.127908698387383 
+
+miniImagenet | 20 runs | 5 ways | 1 shots | 15 queries | classifier: logistic | lambda: 1 | k: 2 | alpha: 0.21 | num_features: 750 
+Accuracy: 0.7926666666666666 | 95% Confidence Level: 3.730184338608483 

@@ -37,22 +37,21 @@ def tsne(support_data, support_label, sampled_data, sampled_label, query_data, q
 ###Plotting Graphs###
 
 #Figure 1: Accuracy when increasing the power in Tukey's Transformation
-#with and without generated features
-#5ways 1 shot
 def tukey_graph():
-    lambdas = [-2,-1,-0.5,0,0.5,1,2]
+    #can change, lambda doesnt work if = 0 or negative
+    lambdas = [0.25, 0.5, 0.75, 1, 2]
 
     acc_with_genf = []
     n_gen = 0
     for l in lambdas:
-        acc = evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=1000, lamb=l, k=2, alpha=0.21, num_features=750)
+        acc = evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=20, lamb=l, k=2, alpha=0.21, num_features=750)
         acc_with_genf.append(np.mean(acc[0]))
     print(acc_with_genf)
 
     acc_wo_genf = []
     n_gen = 0
     for l in lambdas:
-        acc = evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15,n_runs=1000, lamb=l, k=2, alpha=0.21, num_features=0)
+        acc = evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=20, lamb=l, k=2, alpha=0.21, num_features=0)
         acc_wo_genf.append(np.mean(acc[0])) 
     print(acc_wo_genf)
 
@@ -77,13 +76,13 @@ def vary_n_generation():
 
     accs_no_tukey = []
     for n in n_generations:
-        acc = evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15,n_runs=1000, lamb=1, k=2, alpha=0.21, num_features=n)
+        acc = evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=1000, lamb=1, k=2, alpha=0.21, num_features=n)
         accs_no_tukey.append(np.mean(acc[0]))
     print(accs_no_tukey)
     
     accs_with_tukey = []
     for n1 in n_generations:
-        acc = evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15,n_runs=1000, lamb=0.5, k=2, alpha=0.21, num_features=n1)
+        acc = evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=1000, lamb=0.5, k=2, alpha=0.21, num_features=n1)
         accs_with_tukey.append(np.mean(acc[0]))
     print(accs_with_tukey)
 
@@ -96,6 +95,61 @@ def vary_n_generation():
     plt.legend(prop={'size': 12})
 
     plt.savefig('images/n_generation variation.png')
+
+
+#Figure 3: The effect of different values of k.
+def k_graph(): 
+    k_values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    accs_mini = []
+    for kvalue in k_values:
+        acc = evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=1000, lamb=1, k=kvalue, alpha=0.21, num_features=750)
+        accs_mini.append(np.mean(acc[0]))
+    print(accs_mini)
+    
+    accs_cub = []
+    for kvalue2 in k_values:
+        acc = evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=1000, lamb=0.5, k=kvalue2, alpha=0.21, num_features=750)
+        accs_cub.append(np.mean(acc[0]))
+    print(accs_cub)
+
+    plt.figure(figsize=(10, 10))
+    plt.plot(k_values, accs_mini, label='miniImageNet')
+    plt.plot(k_values, accs_cub, label='CUB')
+
+    plt.xlabel('Number of retrieved base class statistics k', fontsize=13)
+    plt.ylabel('Test accuracy (5way-1shot)', fontsize=13)
+    plt.legend(prop={'size': 12})
+
+    plt.savefig('images/n_generation variation.png')
+
+#Figure 4: The effect of different values of alpha.
+def alpha_graph(): 
+    alpha_values = [i for i in np.arange(0,0.4,0.05)]
+
+    accs_mini = []
+    for a1 in alpha_values:
+        acc = evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=1000, lamb=1, k=2, alpha=a1, num_features=750)
+        accs_mini.append(np.mean(acc[0]))
+    print(accs_mini)
+    
+    accs_CUB = []
+    for a2 in alpha_values:
+        acc = evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=1, n_queries=15, n_runs=1000, lamb=0.5, k=2, alpha=a2, num_features=750)
+        accs_CUB.append(np.mean(acc[0]))
+    print(accs_CUB)
+
+
+    plt.figure(figsize=(10, 10))
+    plt.plot(alpha_values, accs_mini, label='miniImageNet')
+    plt.plot(alpha_values, accs_CUB, label='CUB')
+
+    plt.xlabel('Number of alpha added on covariance matrix', fontsize=13)
+    plt.ylabel('Test accuracy (5way-1shot)', fontsize=13)
+    plt.legend(prop={'size': 12})
+
+    plt.savefig('images/n_generation variation.png')
+
 
 if __name__ == "__main__":
     # T-SNE (Figure 2)
@@ -123,14 +177,8 @@ if __name__ == "__main__":
 
     tukey_graph()
     # vary_n_generation()
-
+    #k_graph()
+    #alpha_graph()
 
     #letting my pc rest
     # os.system('shutdown /s /t 100') 
-
-
-
-#Graphs to (maybe) do but low priority
-#Figure 3: The effect of different values of k.
-#Figure 4: The effect of different values of alpha.
-
