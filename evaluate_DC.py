@@ -8,6 +8,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.naive_bayes import GaussianNB
+from sklearn.neighbors import KNeighborsClassifier
 
 import sys 
 
@@ -124,6 +125,8 @@ def evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=5, 
             model = GaussianNB()
         elif classifier == "tree":
             model = DecisionTreeClassifier()
+        elif classifier == "knn":
+            model = KNeighborsClassifier()
         else:
             raise ValueError(f"Unknown Classifier: {classifier}")
 
