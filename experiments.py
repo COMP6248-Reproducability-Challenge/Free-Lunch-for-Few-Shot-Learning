@@ -176,20 +176,32 @@ if __name__ == "__main__":
     # evaluate(dataset='miniImagenet', classifier='logistic', n_ways=5, n_shot=5, n_queries=15, n_runs=100, lamb=1, k=2, alpha=0.21, num_features=0)
 
     # # # Alternative
+    # evaluate(dataset='miniImagenet', classifier='naive_bayes', n_ways=5, n_shot=1, n_queries=15, n_runs=10000, lamb=1, k=2, alpha=0.21, num_features=0)
+    # evaluate(dataset='miniImagenet', classifier='naive_bayes', n_ways=5, n_shot=5, n_queries=15, n_runs=10000, lamb=1, k=2, alpha=0.21, num_features=0)
+    # evaluate(dataset='CUB', classifier='naive_bayes', n_ways=5, n_shot=1, n_queries=15, n_runs=10000, lamb=1, k=2, alpha=0.3, num_features=0)
+    # evaluate(dataset='CUB', classifier='naive_bayes', n_ways=5, n_shot=5, n_queries=15, n_runs=10000, lamb=1, k=2, alpha=0.3, num_features=0)
     # evaluate(dataset='miniImagenet', classifier='naive_bayes', n_ways=5, n_shot=1, n_queries=15, n_runs=10000, lamb=0.5, k=2, alpha=0.21, num_features=750)
     # evaluate(dataset='miniImagenet', classifier='naive_bayes', n_ways=5, n_shot=5, n_queries=15, n_runs=10000, lamb=0.5, k=2, alpha=0.21, num_features=750)
     # evaluate(dataset='CUB', classifier='naive_bayes', n_ways=5, n_shot=1, n_queries=15, n_runs=10000, lamb=0.5, k=2, alpha=0.3, num_features=750)
     # evaluate(dataset='CUB', classifier='naive_bayes', n_ways=5, n_shot=5, n_queries=15, n_runs=10000, lamb=0.5, k=2, alpha=0.3, num_features=750)  
     
+    # evaluate(dataset='miniImagenet', classifier='tree', n_ways=5, n_shot=1, n_queries=15, n_runs=10000, lamb=1, k=2, alpha=0.21, num_features=0)
+    # evaluate(dataset='miniImagenet', classifier='tree', n_ways=5, n_shot=5, n_queries=15, n_runs=10000, lamb=1, k=2, alpha=0.21, num_features=0)
+    # evaluate(dataset='CUB', classifier='tree', n_ways=5, n_shot=1, n_queries=15, n_runs=10000, lamb=1, k=2, alpha=0.3, num_features=0)
+    # evaluate(dataset='CUB', classifier='tree', n_ways=5, n_shot=5, n_queries=15, n_runs=10000, lamb=1, k=2, alpha=0.3, num_features=0)
     # evaluate(dataset='miniImagenet', classifier='tree', n_ways=5, n_shot=1, n_queries=15, n_runs=10000, lamb=0.5, k=2, alpha=0.21, num_features=750)
     # evaluate(dataset='miniImagenet', classifier='tree', n_ways=5, n_shot=5, n_queries=15, n_runs=10000, lamb=0.5, k=2, alpha=0.21, num_features=750)
     # evaluate(dataset='CUB', classifier='tree', n_ways=5, n_shot=1, n_queries=15, n_runs=10000, lamb=0.5, k=2, alpha=0.3, num_features=750)
     # evaluate(dataset='CUB', classifier='tree', n_ways=5, n_shot=5, n_queries=15, n_runs=10000, lamb=0.5, k=2, alpha=0.3, num_features=750)
     
+    # evaluate(dataset='miniImagenet', classifier='knn', n_ways=5, n_shot=1, n_queries=15, n_runs=10000, lamb=1, k=2, alpha=0.21, num_features=0)
+    # evaluate(dataset='miniImagenet', classifier='knn', n_ways=5, n_shot=5, n_queries=15, n_runs=10000, lamb=1, k=2, alpha=0.21, num_features=0)
+    # evaluate(dataset='CUB', classifier='knn', n_ways=5, n_shot=1, n_queries=15, n_runs=10000, lamb=1, k=2, alpha=0.3, num_features=0)
+    # evaluate(dataset='CUB', classifier='knn', n_ways=5, n_shot=5, n_queries=15, n_runs=10000, lamb=1, k=2, alpha=0.3, num_features=0)
     # evaluate(dataset='miniImagenet', classifier='knn', n_ways=5, n_shot=1, n_queries=15, n_runs=10000, lamb=0.5, k=2, alpha=0.21, num_features=750)
     # evaluate(dataset='miniImagenet', classifier='knn', n_ways=5, n_shot=5, n_queries=15, n_runs=10000, lamb=0.5, k=2, alpha=0.21, num_features=750)
-    evaluate(dataset='CUB', classifier='knn', n_ways=5, n_shot=1, n_queries=15, n_runs=10000, lamb=0.5, k=2, alpha=0.3, num_features=750)
-    evaluate(dataset='CUB', classifier='knn', n_ways=5, n_shot=5, n_queries=15, n_runs=10000, lamb=0.5, k=2, alpha=0.3, num_features=750)
+    # evaluate(dataset='CUB', classifier='knn', n_ways=5, n_shot=1, n_queries=15, n_runs=10000, lamb=0.5, k=2, alpha=0.3, num_features=750)
+    # evaluate(dataset='CUB', classifier='knn', n_ways=5, n_shot=5, n_queries=15, n_runs=10000, lamb=0.5, k=2, alpha=0.3, num_features=750)
 
     # # # To run the graphs
     #tukey_graph()
